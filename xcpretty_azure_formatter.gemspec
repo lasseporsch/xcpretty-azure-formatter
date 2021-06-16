@@ -5,20 +5,24 @@ require_relative "lib/xcpretty_azure_formatter/version"
 Gem::Specification.new do |spec|
   spec.name          = "xcpretty_azure_formatter"
   spec.version       = XcprettyAzureFormatter::VERSION
-  spec.authors       = ["TODO: Write your name"]
-  spec.email         = ["TODO: Write your email address"]
+  spec.authors       = ["Lasse Porsch"]
+  spec.email         = ["lasse.porsch@gmail.com"]
 
-  spec.summary       = "TODO: Write a short summary, because RubyGems requires one."
-  spec.description   = "TODO: Write a longer description or delete this line."
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "An XCPretty Formatter to report xcodebuild warnings and errors directly to Azure Pipelines"
+  spec.description   = "
+    This custom XCPretty Formatter converts relevant xcodebuild output into Azure Pipelines logging commands
+    (see https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/logging-commands?view=azure-devops&tabs=bash#logissue-log-an-error-or-warning)
+    The Formatter was designed with a focus on surfacing buuld warnings in the Azure environment, e.g. in Dashboards.
+    "
+  spec.homepage      = "https://github.com/lasseporsch/xcpretty-azure-formatter"
   spec.license       = "MIT"
-  spec.required_ruby_version = ">= 2.4.0"
+  spec.required_ruby_version = ">= 2.6.0"
 
   spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
-  spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+  spec.metadata["source_code_uri"] = "https://github.com/lasseporsch/xcpretty-azure-formatter"
+  spec.metadata["changelog_uri"] = "https://github.com/lasseporsch/xcpretty-azure-formatter/blob/master/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
