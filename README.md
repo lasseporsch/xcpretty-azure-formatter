@@ -1,4 +1,4 @@
-# XcprettyAzureFormatter
+# xcpretty-azure-formatter
 
 ![Build](https://github.com/lasseporsch/xcpretty-azure-formatter/actions/workflows/main.yml/badge.svg)
 
@@ -34,15 +34,9 @@ $ xcodebuild [... all your arguments here...] build | tee xcodebuild-raw.log | x
 
 ### Keep original output, and write Azure Logging Commands to file
 
-There are two options here: Replace console output with Azure Logging Commands, or collect all Azure Logging Commands in a separate file for later output. 
 
-- You can either <b>replace</b> the console output and have `xcpretty` print Azure Logging Commands straight away. In this
 
-## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
