@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+print File.expand_path("../../lib/xcpretty_azure_formatter.rb", __dir__)
