@@ -1,3 +1,7 @@
+## [0.2.0] - 2021-06-17
+
+- The Azure Logging commands now replace the default xcpretty messages for warnings and errors completely, resulting in a much cleaner look in the Azure Pipelines log
+
 ## [0.1.4] - 2021-06-17
 
 - Fixes a bug that causes the file path splitting to fail

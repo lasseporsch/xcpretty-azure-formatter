@@ -10,7 +10,7 @@ class AzureFormatter < XCPretty::Simple
     _log_issue("warning", message, nil)
   end
 
-  def format_compile_warning(file_name, file_path, reason, line, cursor)
+  def format_compile_warning(_file_name, file_path, reason, _line, _cursor)
     _log_issue("warning", reason, file_path)
   end
 
@@ -18,7 +18,7 @@ class AzureFormatter < XCPretty::Simple
     _log_issue("error", message, nil)
   end
 
-  def format_compile_error(file, file_path, reason, line, cursor)
+  def format_compile_error(_file, file_path, reason, _line, _cursor)
     _log_issue("error", reason, file_path)
   end
 
@@ -26,11 +26,11 @@ class AzureFormatter < XCPretty::Simple
     _log_issue("error", reason, file_path)
   end
 
-  def format_undefined_symbols(message, symbol, reference)
+  def format_undefined_symbols(message, _symbol, _reference)
     _log_issue("error", message, nil)
   end
 
-  def format_duplicate_symbols(message, file_paths)
+  def format_duplicate_symbols(message, _file_paths)
     _log_issue("error", message, nil)
   end
 
