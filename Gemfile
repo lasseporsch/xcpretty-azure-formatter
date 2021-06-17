@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in xcpretty_azure_formatter.gemspec
+# Specify your gem's dependencies in xcpretty-azure-formatter.gemspec
 gemspec
 
 gem "rake", "~> 13.0"

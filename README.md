@@ -9,7 +9,7 @@ This xcpretty formatter produces additional [Azure Pipelines LogIssue](https://d
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'xcpretty_azure_formatter'
+gem 'xcpretty-azure-formatter'
 ```
 
 And then execute:
@@ -27,7 +27,7 @@ Simply specify the azure formatter when using `xcpretty`. Be sure to use back-ti
 $ xcodebuild [args] build | xcpretty -f `xcpretty-azure-formatter` 
 ```
 This will retain the original output of xcpretty, and print the appropriate Azure Logging Commands as well.
-
+s
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/xcpretty_azure_formatter. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/xcpretty_azure_formatter/blob/master/CODE_OF_CONDUCT.md).
