@@ -1,40 +1,45 @@
 # frozen_string_literal: true
 
-require "fileutils"
-require_relative "xcpretty_azure_formatter/version"
-
 # xcpretty formatter for Azure Pipelines
 class AzureFormatter < XCPretty::Simple
   def format_ld_warning(message)
     _log_issue("warning", message, nil)
+    super
   end
 
   def format_warning(message)
     _log_issue("warning", message, nil)
+    super
   end
 
-  def format_compile_warning(_file_name, file_path, reason, _line, _cursor)
+  def format_compile_warning(file_name, file_path, reason, line, cursor)
     _log_issue("warning", reason, file_path)
+    super
   end
 
   def format_error(message)
     _log_issue("error", message, nil)
+    super
   end
 
-  def format_compile_error(_file, file_path, reason, _line, _cursor)
+  def format_compile_error(file, file_path, reason, line, cursor)
     _log_issue("error", reason, file_path)
+    super
   end
 
   def format_file_missing_error(reason, file_path)
     _log_issue("error", reason, file_path)
+    super
   end
 
-  def format_undefined_symbols(message, _symbol, _reference)
+  def format_undefined_symbols(message, symbol, reference)
     _log_issue("error", message, nil)
+    super
   end
 
-  def format_duplicate_symbols(message, _file_paths)
+  def format_duplicate_symbols(message, file_paths)
     _log_issue("error", message, nil)
+    super
   end
 
   def _log_issue(type, message, file)
@@ -45,7 +50,7 @@ class AzureFormatter < XCPretty::Simple
       log_params += ";columnnumber=#{file[2]}" if file.length >= 3
       log_params += ";"
     end
-    "##vso[task.logissue #{log_params}]#{message}"
+    puts "##vso[task.logissue #{log_params}]#{message}"
   end
 end
 
