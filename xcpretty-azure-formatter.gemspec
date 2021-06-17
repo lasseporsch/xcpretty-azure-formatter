@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-require_relative "lib/xcpretty_azure_formatter/version"
+require_relative "lib/xcpretty-azure-formatter/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "xcpretty_azure_formatter"
+  spec.name          = "xcpretty-azure-formatter"
   spec.version       = XcprettyAzureFormatter::VERSION
   spec.authors       = ["Lasse Porsch"]
   spec.email         = ["lasse.porsch@gmail.com"]
 
-  spec.summary       = "An XCPretty Formatter to report xcodebuild warnings and errors directly to Azure Pipelines"
+  spec.summary       = "An xcpretty Formatter to report xcodebuild warnings and errors directly to Azure Pipelines"
   spec.description   = "
     This custom XCPretty Formatter converts relevant xcodebuild output into Azure Pipelines logging commands
     (see https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/logging-commands?view=azure-devops&tabs=bash#logissue-log-an-error-or-warning)
-    The Formatter was designed with a focus on surfacing buuld warnings in the Azure environment, e.g. in Dashboards.
+    The Formatter was written with a focus on reporting build warnings and errors to the Azure environment, e.g. in Dashboards.
     "
   spec.homepage      = "https://github.com/lasseporsch/xcpretty-azure-formatter"
   spec.license       = "MIT"
@@ -28,10 +28,10 @@ Gem::Specification.new do |spec|
     "README.md",
     "LICENSE.txt",
     "lib/xcpretty_azure_formatter.rb",
-    "bin/xcpretty_azure_formatter"
+    "bin/xcpretty-azure-formatter"
   ]
   spec.bindir        = "bin"
-  spec.executables   = ["xcpretty_azure_formatter"]
+  spec.executables   = ["xcpretty-azure-formatter"]
   spec.require_paths = ["lib"]
 
   # Uncomment to register a new dependency of your gem
