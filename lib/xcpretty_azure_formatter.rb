@@ -6,43 +6,46 @@ require_relative "xcpretty_azure_formatter/version"
 # xcpretty formatter for Azure Pipelines
 class AzureFormatter < XCPretty::Simple
   def format_ld_warning(message)
-    "##vso[task.logissue type=warning]#{message}"
+    _log_issue("warning", message, nil)
   end
 
   def format_warning(message)
-    "##vso[task.logissue type=warning]#{message}"
+    _log_issue("warning", message, nil)
   end
 
   def format_compile_warning(_file_name, file_path, reason, _line, _cursor)
-    file_path_parts = file_path.split(":")
-    source_path = file_path_parts[0]
-    line_number = file_path_parts[1]
-    column_number = file_path_parts[2]
-    "##vso[task.logissue type=warning;sourcepath=#{source_path};linenumber=#{line_number};columnnumber=#{column_number};]#{reason}"
+    _log_issue("warning", reason, file_path)
   end
 
   def format_error(message)
-    "##vso[task.logissue type=error]#{message}"
+    _log_issue("error", message, nil)
   end
 
   def format_compile_error(_file, file_path, reason, _line, _cursor)
-    file_path_parts = file_path.split(":")
-    source_path = file_path_parts[0]
-    line_number = file_path_parts[1]
-    column_number = file_path_parts[2]
-    "##vso[task.logissue type=error;sourcepath=#{source_path};linenumber=#{line_number};columnnumber=#{column_number};]#{reason}"
+    _log_issue("error", reason, file_path)
   end
 
   def format_file_missing_error(reason, file_path)
-    "##vso[task.logissue type=warning;sourcepath=#{file_path}]#{reason}"
+    _log_issue("error", reason, file_path)
   end
 
   def format_undefined_symbols(message, _symbol, _reference)
-    "##vso[task.logissue type=error;]#{message}"
+    _log_issue("error", message, nil)
   end
 
   def format_duplicate_symbols(message, _file_paths)
-    "##vso[task.logissue type=error]#{message}"
+    _log_issue("error", message, nil)
+  end
+
+  def _log_issue(type, message, file)
+    log_params = "type=#{type}"
+    unless file.nil?
+      log_params += ";sourcepath=#{file[0]}"
+      log_params += ";linenumber=#{file[1]}" if file.length >= 2
+      log_params += ";columnnumber=#{file[2]}" if file.length >= 3
+      log_params += ";"
+    end
+    "##vso[task.logissue #{log_params}]#{message}"
   end
 end
 
