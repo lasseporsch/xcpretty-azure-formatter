@@ -1,4 +1,6 @@
-## [Unreleased]
+## [0.1.4] - 2021-06-17
+
+- Fixes a bug that causes the file path splitting to fail
 
 ## [0.1.3] - 2021-06-17
 
