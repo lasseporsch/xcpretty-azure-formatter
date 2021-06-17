@@ -1,6 +1,6 @@
 # xcpretty-azure-formatter
 
-![Build](https://github.com/lasseporsch/xcpretty-azure-formatter/actions/workflows/main.yml/badge.svg)
+![Build](https://github.com/lasseporsch/xcpretty-azure-formatter/actions/workflows/main.yml/badge.svg) [![Gem Version](https://badge.fury.io/rb/xcpretty-azure-formatter.svg)](https://badge.fury.io/rb/xcpretty-azure-formatter)
 
 This xcpretty formatter produces additional [Azure Pipelines LogIssue](https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/logging-commands?view=azure-devops&tabs=bash#logissue-log-an-error-or-warning) commands so xcodebuild errors and warnigns can be reported to the Azure Pipeline environment.
 
