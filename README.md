@@ -26,8 +26,14 @@ Simply specify the azure formatter when using `xcpretty`. Be sure to use back-ti
 ```bash
 $ xcodebuild [args] build | xcpretty -f `xcpretty-azure-formatter` 
 ```
-This will retain the original output of xcpretty, and print the appropriate Azure Logging Commands as well.
-s
+This will retain the original output of xcpretty, except for the following message categories which will be replaced by Azure-friendly output:
+- General warnings and errors
+- Compiler warnings and errors
+- Linker warnings
+- File Missing errors
+- Undefined Symbols errors
+- Duplicate Symbols errors
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/xcpretty_azure_formatter. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/xcpretty_azure_formatter/blob/master/CODE_OF_CONDUCT.md).
