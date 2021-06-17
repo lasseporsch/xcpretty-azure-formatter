@@ -45,9 +45,10 @@ class AzureFormatter < XCPretty::Simple
   def _log_issue(type, message, file)
     log_params = "type=#{type}"
     unless file.nil?
-      log_params += ";sourcepath=#{file[0]}"
-      log_params += ";linenumber=#{file[1]}" if file.length >= 2
-      log_params += ";columnnumber=#{file[2]}" if file.length >= 3
+      file_parts = file.split(":")
+      log_params += ";sourcepath=#{file_parts[0]}"
+      log_params += ";linenumber=#{file_parts[1]}" if file_parts.length >= 2
+      log_params += ";columnnumber=#{file_parts[2]}" if file_parts.length >= 3
       log_params += ";"
     end
     puts "##vso[task.logissue #{log_params}]#{message}"
