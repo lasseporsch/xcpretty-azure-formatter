@@ -43,7 +43,7 @@ class AzureFormatter < XCPretty::Simple
       log_params += ";columnnumber=#{file_parts[2]}" if file_parts.length >= 3
       log_params += ";"
     end
-    puts "##vso[task.logissue #{log_params}]#{message}"
+    "##vso[task.logissue #{log_params}]#{message}"
   end
 end
 
