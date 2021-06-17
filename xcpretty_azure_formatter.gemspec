@@ -26,11 +26,11 @@ Gem::Specification.new do |spec|
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
   spec.files = [
     "README.md",
-    "LICENSE",
+    "LICENSE.txt",
     "lib/xcpretty_azure_formatter.rb",
     "bin/xcpretty_azure_formatter"
   ]
-  spec.bindir        = "exe"
+  spec.bindir        = "bin"
   spec.executables   = ["xcpretty_azure_formatter"]
   spec.require_paths = ["lib"]
 

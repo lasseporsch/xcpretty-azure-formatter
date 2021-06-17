@@ -2,9 +2,7 @@
 
 ![Build](https://github.com/lasseporsch/xcpretty-azure-formatter/actions/workflows/main.yml/badge.svg)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/xcpretty_azure_formatter`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This xcpretty formatter produces additional [Azure Pipelines LogIssue](https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/logging-commands?view=azure-devops&tabs=bash#logissue-log-an-error-or-warning) commands so xcodebuild errors and warnigns can be reported to the Azure Pipeline environment.
 
 ## Installation
 
@@ -24,19 +22,11 @@ Or install it yourself as:
 
 ## Usage
 
-Assuming you want to keep the original `xcodebuild` or `xcpretty` output, but <u>also</u> have `xcpretty` report any errors or warnings to Azure, you have two choices for using this formatter:
-
-### Write original output to log file, and print Azure Logging Commands instead
-Since you will have to print the Azure Logging Commands anyway at some point to the standard output during a pipeline run, you might do it right away when `xcodebuild` runs, and save the standard output in a log file:
+Simply specify the azure formatter when using `xcpretty`. Be sure to use back-ticks. For more details see the [xcpretty documentation](https://github.com/xcpretty/xcpretty#extensions)
 ```bash
-$ xcodebuild [... all your arguments here...] build | tee xcodebuild-raw.log | xcpretty -f `xcpretty-azure-formatter` 
+$ xcodebuild [args] build | xcpretty -f `xcpretty-azure-formatter` 
 ```
-
-### Keep original output, and write Azure Logging Commands to file
-
-
-
-
+This will retain the original output of xcpretty, and print the appropriate Azure Logging Commands as well.
 
 ## Contributing
 
